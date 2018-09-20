@@ -1,8 +1,22 @@
-<h1>Tasks</h1>
+<%#ERB view to display the tasks from the controller action%>
+
+<!-- <h1>Tasks</h1>
 <ul>
-  <% tasks.each do |task|  %>
+  <%= @tasks.each do |task| %>
+  <a href="/tasks/<%= task[:chore] %><h2>"
+  <%= task[:status] %>
+  <h2>
+    <%= task[:chore] %>
+  <% end %>
+</ul> -->
+<%= link_to 'New Task', new_task_path %>
+
+<h1>Your Tasks</h1>
+<ul>
+  <% @tasks.each do |task| %>
     <li>
-      <%= task[:chore] %> By: <%= task[:status] %>
+      <%= link_to task.chore, task_path(task.id) %>
+      <%= task.status %>
     </li>
   <% end %>
 </ul>

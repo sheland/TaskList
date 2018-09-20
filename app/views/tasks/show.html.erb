@@ -1,0 +1,8 @@
+<% if @task.nil? %>
+  <h1> 404 Not found</h1>
+<% else %>
+  <h1>Task</h1>
+  <%= @task.id %>
+  <%= @task.chore %>
+  <%= @task.status %>
+<% end %>
