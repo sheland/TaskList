@@ -20,9 +20,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(chore: params[:chore][:status], chore: params[:chore][:status])
-    if @task.save
-
+    if Task.create(:chore => params[:task][:chore], :status => "not done")
       redirect_to root_path
     else
       render :new
