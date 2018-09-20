@@ -4221,3 +4221,114 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/tasks/" for 127.0.0.1 at 2018-09-20 16:51:19 -0700
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 105ms (Views: 101.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks/" for 127.0.0.1 at 2018-09-20 16:51:32 -0700
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-09-20 16:52:30 -0700
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"tasks"}, missing required keys: [:id]:
+  app/views/tasks/new.html.erb:10:in `_app_views_tasks_new_html_erb___2057980470266831329_70215876695720'
+
+Started POST "/__better_errors/835cb6a8fe0617ed/variables" for 127.0.0.1 at 2018-09-20 16:52:31 -0700
+Started GET "/tasks/" for 127.0.0.1 at 2018-09-20 16:52:35 -0700
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/6/edit" for 127.0.0.1 at 2018-09-20 16:52:38 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:35
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 98ms (Views: 95.0ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/tasks/6" for 127.0.0.1 at 2018-09-20 16:52:44 -0700
+Processing by TasksController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fnrSTzO+OLzTwE+GVkKRzTa2HGwKTAFWAJSKkXiKaAgbreszHPNdy4A3IWSubWOmR/bjErWWehMLTKWH9Z2lKQ==", "task"=>{"chore"=>"Walk the cat to the zoo"}, "commit"=>"Edit Task", "id"=>"6"}
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:41
+  [1m[36mTask Update (0.5ms)[0m  [1m[33mUPDATE "tasks" SET "chore" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["chore", "Walk the cat to the zoo"], ["updated_at", "2018-09-20 23:52:44.725146"], ["id", 6]]
+  ↳ app/controllers/tasks_controller.rb:41
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:41
+Redirected to http://localhost:3000/tasks/6
+Completed 200 OK in 17ms (ActiveRecord: 12.6ms)
+
+
+Started GET "/tasks/6" for 127.0.0.1 at 2018-09-20 16:52:44 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:14
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 114ms (Views: 110.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/" for 127.0.0.1 at 2018-09-20 16:52:51 -0700
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-09-20 16:53:01 -0700
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"tasks"}, missing required keys: [:id]:
+  app/views/tasks/new.html.erb:10:in `_app_views_tasks_new_html_erb___2057980470266831329_70215924752340'
+
+Started POST "/__better_errors/aca6439f62bed311/variables" for 127.0.0.1 at 2018-09-20 16:53:02 -0700
+Started GET "/tasks/" for 127.0.0.1 at 2018-09-20 16:53:47 -0700
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-09-20 16:53:49 -0700
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 140ms (Views: 137.4ms | ActiveRecord: 0.0ms)
+
+
