@@ -5,5 +5,5 @@
   <%= @task.id %>
   <%= @task.chore %>
   <%= @task.status %>
-  <%= link_to "delete", delete_task_path(@task.id), method: :delete  %>
+  <%= link_to "delete", delete_task_path(@task.id), method: :delete, :data => {:confirm => 'Are you sure?'}%>
 <% end %>
