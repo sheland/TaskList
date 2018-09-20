@@ -2,3 +2,13 @@
 <h1>
   <%= edit_task_path(params[:id].to_i) %>
 </h1>
+<%= form_with model: @task, class: "edit-form" do |f| %>
+  <p>Please edit a task:</p>
+
+  <%= f.label :chore %>
+  <%= f.text_field :chore %>
+
+  <%= f.submit "Edit Task", class: "edit-button" %>
+<% end %>
+
+<%= link_to 'Back', task_path %>

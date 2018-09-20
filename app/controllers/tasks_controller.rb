@@ -37,9 +37,10 @@ class TasksController < ApplicationController
 
 
   def update
-    @task = Task.find(params[:id].to_i)
+    task = Task.find(params[:id].to_i)
+    task.update(:chore => params[:task][:chore])
 
-    redirect_to task_path(@task)
+    redirect_to task_path(task)
   end
 
   def destroy

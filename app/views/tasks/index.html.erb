@@ -17,6 +17,7 @@
     <li>
       <%= link_to task.chore, task_path(task.id) %>
       <%= task.status %>
+      <%= link_to "edit", edit_task_path(task.id) %>
     </li>
   <% end %>
 </ul>
