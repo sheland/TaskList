@@ -1,0 +1,15 @@
+<h1> Edit a task</h1>
+<h1>
+  <% edit_task_path(params[:id].to_i) %>
+</h1>
+<%= form_with model: @task, class: "edit-form" do |f| %>
+  <p>Please edit a task:</p>
+
+  <%= f.label :chore %>
+  <%= f.text_field :chore %>
+
+  <%= f.label :status %>
+  <%= f.check_box :completed %>
+
+  <%= f.submit "Edit Task", class: "edit-button" %>
+<% end %>

@@ -1,0 +1,18 @@
+<h1> Mark Task Complete</h1>
+<h1>
+  <% completed_tasks_path(params[:id].to_i) %>
+</h1>
+<%= form_with model: @task, class: "complete-form" do |f| %>
+  <p>Please edit a task:</p>
+
+  <%= f.label :chore %>
+  <%= f.text_field :chore %>
+
+  <%= f.label :status %>
+  <%= f.check_box :completed %>
+
+  <%= f.submit "Mark Complete", class: "complete-button" %>
+<% end %>
+<div></div>
+<%= link_to 'Back', tasks_path %>
+<% end %>

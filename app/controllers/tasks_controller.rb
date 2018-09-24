@@ -12,7 +12,6 @@ class TasksController < ApplicationController
   def show
     id = params[:id].to_i
     @task = Task.find(params[:id].to_i)
-    console
 
     if @task.nil?
       render :notfound
@@ -20,7 +19,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    if Task.create(:chore => params[:task][:chore], :status => "not done")
+    if Task.create(:chore => params[:task][:chore], :status => "Not Complete")
       redirect_to root_path
     else
       render :new
@@ -32,6 +31,7 @@ class TasksController < ApplicationController
   end
 
   def edit
+    id = params[:id].to_i
     @task = Task.find(params[:id].to_i)
   end
 
@@ -39,15 +39,22 @@ class TasksController < ApplicationController
   def update
     task = Task.find(params[:id].to_i)
     task.update(:chore => params[:task][:chore])
+    task.update(:status => params[:task][:status])
 
-    redirect_to task_path(task)
+    redirect_to tasks_path(task)
+  end
+
+  def completed
+    task = Task.find(params[:id].to_i)
+    task.update_attribute(:completion_date, Time.now)
+
+    redirect_to completed_tasks_path
   end
 
   def destroy
-    task = Task.find(params[:id])
+    task = Task.find(params[:id].to_i)
     task.destroy
 
     redirect_to root_path
   end
-
 end

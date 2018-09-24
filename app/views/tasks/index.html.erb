@@ -1,15 +1,7 @@
-<%#ERB view to display the tasks from the controller action%>
 
-<!-- <h1>Tasks</h1>
-<ul>
-  <%= @tasks.each do |task| %>
-  <a href="/tasks/<%= task[:chore] %><h2>"
-  <%= task[:status] %>
-  <h2>
-    <%= task[:chore] %>
-  <% end %>
-</ul> -->
-<%= link_to 'New Task', new_task_path %>
+<%= button_to "Add New Task", new_task_path, method: :get %>
+<%= button_to "Mark Task Complete", completed_tasks_path, method: :patch %>
+
 
 <h1>Your Tasks</h1>
 <ul>
@@ -19,5 +11,4 @@
       <%= task.status %>
       <%= link_to "edit", edit_task_path(task.id) %>
     </li>
-  <% end %>
-</ul>
+<% end %>

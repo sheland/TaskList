@@ -1,6 +1,15 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
+html,body{
+  height:120%;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 body {
-  background-color: yellow;
+  padding-top: 60px;
+  padding-left: 260px;
+  list-style-type: none;
 }
