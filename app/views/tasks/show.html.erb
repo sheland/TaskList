@@ -7,29 +7,5 @@
   <%= link_to "Delete", delete_task_path(@task.id), method: :delete, :data => {:confirm => 'Are you sure?'}%>
 <% end %>
 
-
-<!---<%if @task.status == completed? %>
-  <%= link_to "Mark Task Complete", completed_tasks_path, method: :patch %>
-</div>
-<div>
- <p style="opacity: 0.4;"><strike><%= task.chore %></strike></p>
-</div>
-<div>
- <%= link_to "Delete", delete_task_path(@task.id), method: :delete, data: { confirm: "Are you sure?" } %>
-</div>
-<% else %>
-<div>
- <%= link_to "Mark Task Complete", completed_tasks_path, method: :patch %>
-</div>
-<div>
- <p><%= task.chore %></p>
-</div>
-<div>
- <%= link_to "Delete", delete_task_path(@task.id), method: :delete, data: { confirm: "Are you sure?" } %>
-</div>
-<% end %>
-</div> -->
-
-
 <div></div>
 <%= link_to 'Back', tasks_path %>
