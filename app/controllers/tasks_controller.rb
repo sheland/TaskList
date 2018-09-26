@@ -38,17 +38,26 @@ class TasksController < ApplicationController
 
   def update
     task = Task.find(params[:id].to_i)
-    task.update(:chore => params[:task][:chore])
-    task.update(:status => params[:task][:status])
+    task.update(:chore => params[:task][:chore], :status => params[:task][:status] )
 
     redirect_to tasks_path(task)
   end
 
   def completed
     task = Task.find(params[:id].to_i)
-    task.update_attribute(:completion_date, Time.now)
 
-    redirect_to completed_tasks_path
+    if task.completion_date
+      task.completion_date = nil
+      task.status = "Not Complete"
+    else
+      task.completion_date = Date.today
+      task.status = "Complete"
+    end
+    task.save
+
+    redirect_to tasks_path
+
+
   end
 
   def destroy

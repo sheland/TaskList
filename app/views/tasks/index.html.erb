@@ -1,14 +1,31 @@
+<h1 class= "title">
+  <%= TaskList %>
+</h1>
 
+<div id="button">
 <%= button_to "Add New Task", new_task_path, method: :get %>
-<%= button_to "Mark Task Complete", completed_tasks_path, method: :patch %>
+</div>
 
-
-<h1>Your Tasks</h1>
+<div class="container">
+<h1 Your Tasks</h1>
 <ul>
   <% @tasks.each do |task| %>
-    <li>
+
+    <li class="task">
       <%= link_to task.chore, task_path(task.id) %>
       <%= task.status %>
       <%= link_to "edit", edit_task_path(task.id) %>
     </li>
+
+    <li class="complete">
+      <% if task.completion_date %>
+        <%= button_to "Mark Task Incomplete", completed_tasks_path(task.id), method: :patch %>
+      <p class="date">
+        <%= task.completion_date %>
+      </p>
+      <% else %>
+        <%= button_to "Mark Task Complete", completed_tasks_path(task.id), method: :patch %>
+      <% end %>
+    </li>
 <% end %>
+</div>

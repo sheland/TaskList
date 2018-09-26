@@ -3,13 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
-html,body{
-  height:120%;
-  font-family: 'Josefin Sans', sans-serif;
-}
+
 
 body {
   padding-top: 60px;
-  padding-left: 260px;
+  padding-left: 100px;
+  padding-right: 100px;
   list-style-type: none;
+  font-family: 'Josefin Sans', sans-serif;
+  background: #f3ebff;
+}
+
+.container {
+  border-style: solid;
+  border-radius: 25px;
+}
+
+
+.complete {
+  list-style-type: none;
+
+}
+
+.task {
+  font-size: 1em;
 }
